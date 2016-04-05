@@ -105,6 +105,8 @@ public class NewsDraft {
 	}
 
 	public Map<String, Object> convertToEntityMap(Properties templateProps, Properties terminalProps) {
+
+		
 		Map<String, Object> map = new TreeMap<String, Object>();
 		map.put("type", TYPE);
 		map.put("title", this.title);
@@ -116,6 +118,9 @@ public class NewsDraft {
 		map.put("body", Collections.singletonMap("und", Arrays.asList(contentMap)));
 		map.put("field_news_template", Collections.singletonMap("und",
 				Arrays.asList(Collections.singletonMap("tid", templateProps.get(this.news_template)))));
+
+		System.out.println(":::::::"+this.news_template+":::::::::::::::"+templateProps.get(this.news_template)+"::::::::");
+		
 		map.put("field_news_terminal", Collections.singletonMap("und",
 				Arrays.asList(Collections.singletonMap("tid", terminalProps.get(this.news_terminal)))));
 		map.put("field_corpus",
